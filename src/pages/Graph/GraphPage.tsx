@@ -143,7 +143,7 @@ const containerStyle = style({
 
 const kioskContainerStyle = style({
   minHeight: '350px',
-  height: 'calc(100vh - 10px)' // View height minus top bar height
+  height: 'calc(100vh)' // View height minus top bar height
 });
 
 const cytoscapeGraphContainerStyle = style({ flex: '1', minWidth: '350px', zIndex: 0, paddingRight: '5px' });
@@ -387,7 +387,7 @@ export class GraphPage extends React.Component<GraphPageProps, GraphPageState> {
     return (
       <>
         <FlexView className={conStyle} column={true}>
-          <div>
+          <div style={{ height: 0, visibility: 'hidden' }}>
             <GraphToolbarContainer cy={cy} disabled={this.state.graphData.isLoading} onToggleHelp={this.toggleHelp} />
           </div>
           <FlexView

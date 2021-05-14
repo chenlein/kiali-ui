@@ -5,6 +5,11 @@ export const isKioskMode = () => {
   return urlParams.get('kiosk') === 'true';
 };
 
+export const isPureMode = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('pure') === 'true';
+};
+
 export const getFocusSelector = () => {
   return new URLSearchParams(window.location.search).get(URLParam.FOCUS_SELECTOR) || undefined;
 };
